@@ -103,6 +103,9 @@ async def initialize_sk_memory_store(
         logging.info("AZCOSMOS_DATABASE_NAME:" + os.environ.get("AZCOSMOS_DATABASE_NAME") or "sk_database")
         logging.info("collection_name:" + collection_name)
         logging.info("index_name:" + index_name)
+        logging.info("num_lists:" + str(num_lists))
+        logging.info("vector_dimensions:" + str(vector_dimensions))
+        logging.info("similarity:" + similarity)
 
         store = await AzureCosmosDBMemoryStore.create(
             cosmos_connstr=os.environ.get("AZCOSMOS_CONNSTR") or "connection-string",
